@@ -1,0 +1,166 @@
+/* 柚木（作例）共通スタイル */
+:root{
+  --ai:#233B53;          /* 藍：暖簾・見出し */
+  --ai-deep:#18293B;
+  --ai-line:#5C7189;
+  --porcelain:#EEF0EC;   /* 白磁：地 */
+  --paper:#FAFAF7;
+  --sumi:#22231F;        /* 墨：本文 */
+  --sumi-soft:#4B4D47;
+  --soba:#8F8878;        /* そば粉：罫・点線 */
+  --rule:#D2D3CB;
+  --yuzu:#E2B127;        /* 柚子：家紋・現在地 */
+  --on-ai:#F2F0EA;
+  --on-ai-soft:#C9D2DB;
+  --t-beef:#8A2E3B; --t-fowl:#73551F; --t-sea:#1F6676; --t-dashi:#625C50; --t-egg:#7F5800; --t-veg:#356331; --t-allium:#5E4A73;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--porcelain);color:var(--sumi);font-family:'Noto Sans JP','Noto Sans CJK JP',sans-serif;font-size:16px;line-height:1.9;line-break:strict;word-break:auto-phrase;-webkit-text-size-adjust:100%}
+body.zh{font-family:'Noto Sans TC','Noto Sans CJK TC',sans-serif;word-break:normal}
+body.ja h1,body.ja h2,body.ja h3,.mincho{font-family:'Zen Old Mincho','Noto Serif JP','Noto Serif CJK JP',serif;font-weight:400}
+body.zh h1,body.zh h2,body.zh h3,.kai{font-family:'LXGW WenKai TC','Noto Serif TC','Noto Serif CJK TC',serif;font-weight:400}
+.ja-text{font-family:'Noto Sans JP','Noto Sans CJK JP',sans-serif}
+a{color:var(--ai)}
+a:focus-visible{outline:2px solid var(--yuzu);outline-offset:3px}
+img,svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(20px,5vw,56px)}
+.nowrap{display:inline-block}
+
+/* 作例であることの表示 */
+.sample-bar{background:var(--yuzu);color:#2A2205;font-family:'Noto Sans JP','Noto Sans CJK JP',sans-serif;font-size:13px;line-height:1.6;padding:10px clamp(20px,5vw,56px);display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;text-align:center}
+.sample-bar a{color:#2A2205;font-weight:500}
+
+/* ヘッダー */
+.site-header{background:var(--ai);color:var(--on-ai)}
+.site-header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding-block:16px}
+.logo{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;color:var(--on-ai);text-decoration:none}
+.logo-name{font-family:'Zen Old Mincho','Noto Serif JP','Noto Serif CJK JP',serif;font-size:28px;letter-spacing:.24em;line-height:1.4}
+.logo-sub{font-size:13px;letter-spacing:.14em;color:var(--on-ai-soft)}
+.site-header .site-nav{order:1;margin-left:auto}
+.site-header .lang{order:2}
+.site-nav{display:flex;flex-wrap:wrap;gap:0 22px;font-size:14px;letter-spacing:.08em}
+.site-nav a{color:var(--on-ai);text-decoration:none;padding:10px 0;display:inline-block;white-space:nowrap}
+.site-nav a:hover{color:var(--yuzu)}
+.lang{display:flex;border:1px solid var(--ai-line);font-size:13px;letter-spacing:.08em}
+.lang a,.lang span{display:inline-flex;align-items:center;min-height:40px;padding:0 14px}
+.lang a{color:var(--on-ai);text-decoration:none}
+.lang a:hover{color:var(--yuzu)}
+.lang [aria-current]{background:var(--yuzu);color:var(--sumi)}
+.lang .tc{font-family:'Noto Sans TC','Noto Sans CJK TC',sans-serif}
+.lang .jp{font-family:'Noto Sans JP','Noto Sans CJK JP',sans-serif}
+
+/* ヒーロー：暖簾 */
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:flex-start;gap:40px 64px;padding-block:0 clamp(64px,8vw,104px)}
+.hero-text{flex:3 1 460px;min-width:0;padding-top:clamp(48px,7vw,96px)}
+.hero h1{margin:0;font-size:clamp(28px,7.4vw,52px);line-height:1.5;letter-spacing:.05em;color:var(--ai-deep)}
+body.zh .hero h1{font-size:clamp(26px,7vw,46px);letter-spacing:.03em}
+.hero-lead{margin:28px 0 0;font-size:17px;line-height:2;color:var(--sumi-soft);max-width:30em}
+.actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;font-size:15px;letter-spacing:.1em;text-decoration:none;border-radius:2px}
+.btn-primary{background:var(--ai);color:var(--on-ai)}
+.btn-primary:hover{background:var(--ai-deep)}
+.btn-secondary{border:1px solid var(--ai);color:var(--ai)}
+.btn-secondary:hover{background:#E2E6E2}
+.hero-visitor{margin:28px 0 0;font-size:14px;line-height:1.8;color:var(--sumi-soft)}
+.noren-box{flex:2 1 300px;min-width:0;display:flex;justify-content:center}
+.noren{width:100%;max-width:400px;height:auto;display:block}
+.noren .panel{transform-box:fill-box;transform-origin:50% 0;animation:sway 2.6s ease-out .4s 1 both}
+.noren .panel-2{animation-delay:.55s}
+.noren .panel-3{animation-delay:.7s}
+@keyframes sway{0%{transform:rotate(0)}22%{transform:rotate(2.4deg)}50%{transform:rotate(-1.4deg)}76%{transform:rotate(.6deg)}100%{transform:rotate(0)}}
+
+/* セクション共通 */
+.section{padding-block:clamp(64px,9vw,120px)}
+.section-paper{background:var(--paper)}
+.section-ai{background:var(--ai);color:var(--on-ai)}
+.section h2{margin:0;font-size:clamp(28px,3.4vw,38px);line-height:1.5;letter-spacing:.14em;color:var(--ai-deep)}
+.section-ai h2{color:var(--on-ai)}
+.section-intro{margin:16px 0 0;max-width:36em;color:var(--sumi-soft)}
+.section-ai .section-intro{color:var(--on-ai-soft)}
+
+/* そばのこと */
+.craft{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px 56px;margin-top:48px}
+.craft h3{margin:0 0 10px;font-size:26px;letter-spacing:.2em;color:var(--ai-deep);padding-top:22px;border-top:2px solid var(--ai)}
+.craft p{margin:0;font-size:15px;line-height:2;color:var(--sumi-soft)}
+
+/* お品書き */
+.menu-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:40px 56px;margin-top:48px}
+.menu-group h3{margin:0;font-size:21px;letter-spacing:.16em;color:var(--ai-deep);padding-bottom:10px;border-bottom:2px solid var(--ai)}
+.items{list-style:none;margin:0;padding:0}
+.item{padding:18px 0 20px;border-bottom:1px solid var(--rule)}
+.item-head{display:flex;align-items:baseline;gap:0 10px}
+.item-name{font-size:19px;letter-spacing:.06em;color:var(--sumi)}
+body.ja .item-name{font-family:'Zen Old Mincho','Noto Serif JP','Noto Serif CJK JP',serif}
+body.zh .item-name{font-family:'LXGW WenKai TC','Noto Serif TC','Noto Serif CJK TC',serif;font-size:20px}
+.leader{flex:1 1 24px;min-width:24px;border-bottom:1px dotted var(--soba);transform:translateY(-6px)}
+.price{white-space:nowrap;font-variant-numeric:tabular-nums;font-size:16px}
+.item-desc{margin:6px 0 0;font-size:14px;line-height:1.85;color:var(--sumi-soft)}
+.ja-name{display:inline-block;margin-top:10px;padding:2px 12px;background:#E1E4DE;font-family:'Zen Old Mincho','Noto Serif JP','Noto Serif CJK JP',serif;font-size:18px;letter-spacing:.06em;color:var(--sumi)}
+.tags{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;line-height:1;padding:5px 10px 5px 8px;border:1px solid currentColor;border-radius:999px;background:var(--paper)}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;flex:0 0 auto}
+.t-beef{color:var(--t-beef)}.t-fowl{color:var(--t-fowl)}.t-sea{color:var(--t-sea)}.t-dashi{color:var(--t-dashi)}.t-egg{color:var(--t-egg)}.t-veg{color:var(--t-veg)}.t-allium{color:var(--t-allium)}
+.legend{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-size:14px;color:var(--sumi-soft)}
+.legend .tags{margin:0}
+.feature{margin-top:48px;background:var(--ai);color:var(--on-ai);padding:clamp(28px,4vw,44px);display:flex;flex-wrap:wrap;gap:20px 56px}
+.feature-head{flex:1 1 220px;min-width:0}
+.feature-head h3{margin:0;font-size:24px;letter-spacing:.14em;color:var(--on-ai)}
+.feature-head p{margin:8px 0 0;font-size:14px;color:var(--on-ai-soft)}
+.feature-body{flex:2 1 360px;min-width:0}
+.feature .item{border-bottom:0;padding:0}
+.feature .item-name{color:var(--on-ai)}
+.feature .leader{border-bottom-color:var(--on-ai-soft)}
+.feature .item-desc{color:var(--on-ai-soft)}
+.feature .ja-name{background:#E1E4DE}
+.feature-note{margin:14px 0 0;font-size:13px;line-height:1.8;color:var(--on-ai-soft)}
+.note{margin:28px 0 0;font-size:13px;line-height:1.9;color:var(--sumi-soft)}
+
+/* 食べ方 */
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px 56px;margin-top:40px}
+.howto h3{margin:0 0 8px;font-size:22px;letter-spacing:.1em;color:var(--ai-deep)}
+.howto p{margin:0;font-size:15px;line-height:2;color:var(--sumi-soft)}
+
+/* 店員に見せる日本語 */
+.phrases{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px}
+.phrase{background:var(--paper);color:var(--sumi);border-left:5px solid var(--yuzu);padding:20px 22px}
+.phrase-ja{margin:0;font-family:'Noto Sans JP','Noto Sans CJK JP',sans-serif;font-weight:500;font-size:clamp(20px,2.3vw,23px);line-height:1.6;letter-spacing:.02em}
+.phrase-zh{margin:8px 0 0;font-size:14px;color:var(--sumi-soft)}
+
+/* ご案内・店舗情報 */
+.info{margin:40px 0 0;display:grid;grid-template-columns:minmax(6.5em,auto) minmax(0,1fr);border-top:1px solid var(--rule);font-size:15px;line-height:1.9}
+.info dt{padding:16px 16px 16px 0;border-bottom:1px solid var(--rule);color:var(--ai);letter-spacing:.08em;font-weight:500}
+.info dd{margin:0;padding:16px 0;border-bottom:1px solid var(--rule)}
+.info .sub{display:block;font-size:13px;color:var(--sumi-soft)}
+.taxi{display:inline-block;margin-top:4px;padding:6px 14px;background:#E1E4DE;font-family:'Noto Sans JP','Noto Sans CJK JP',sans-serif;font-size:18px;font-weight:500;letter-spacing:.04em}
+.access-grid{display:flex;flex-wrap:wrap;gap:40px 72px}
+.access-grid > div{flex:1 1 380px;min-width:0}
+.map{min-height:300px;height:100%;background:#E1E4DE;border:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--sumi-soft);font-size:14px;letter-spacing:.1em}
+
+/* フッター */
+.site-footer{background:var(--ai-deep);color:var(--on-ai-soft)}
+.site-footer .wrap{padding-block:48px 36px}
+.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 48px;padding-bottom:28px;border-bottom:1px solid #2E4359}
+.footer-top .logo-name{color:var(--on-ai)}
+.footer-nav{display:flex;flex-wrap:wrap;gap:0 22px;font-size:13px}
+.footer-nav a{color:var(--on-ai-soft);text-decoration:none;padding:10px 0;display:inline-block}
+.footer-nav a:hover{color:var(--yuzu)}
+.footer-bottom{padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 32px;font-size:12px;color:#93A2B1}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .noren .panel{animation:none}
+}
+@media (max-width:860px){
+  .site-header .lang{order:1;margin-left:auto}
+  .site-header .site-nav{order:2;margin-left:0;width:100%;flex-wrap:nowrap;overflow-x:auto;gap:0 18px;scrollbar-width:none}
+  .site-header .site-nav::-webkit-scrollbar{display:none}
+}
+@media (max-width:640px){
+  .hero-text{padding-top:40px}
+  .noren{max-width:280px}
+  .actions .btn{flex:1 1 auto}
+  .info{grid-template-columns:1fr}
+  .info dt{padding:16px 0 0;border-bottom:0}
+  .info dd{padding:2px 0 16px}
+}
